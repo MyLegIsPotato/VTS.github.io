@@ -5,6 +5,17 @@
     --teritary-color: #E7246D;
 }
 
+#mc_embed_signup {
+    background: #000000;
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center;
+    width: 600px;
+    padding: 20px;
+    border: 5px solid var(--teritary-color);
+    border-radius: 20px;
+}
+
 body {
     background: #000000;
     color: #FFD500;
@@ -12,13 +23,39 @@ body {
     font-family: 'Poppins';
 }
 
+
 .hero {
     text-align: center;
     background-color: black;
 
 }
 
-.logoImg{
+.optionalParent{
+    display:flex;
+    align-content: center;
+}
+
+.gallery{
+
+    width: 100%;
+    height: auto;
+
+}
+
+.pswp-gallery {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+    .pswp-gallery a img {
+        display: block;
+        border: 2px solid var(--teritary-color);
+        padding: 2px;
+        margin: 10px;
+    }
+
+.logoImg {
     width: 80%;
     margin: auto;
 }
@@ -226,7 +263,6 @@ section.features-section {
 
 .textImg:hover {
     filter: drop-shadow(3px 3px 8px rgb(255 213 0 / 1));
-    background-color: red;
 
 }
 
@@ -532,16 +568,7 @@ nav li a:hover {
     width: 30px;
     height: 30px;
   }
-  .features-section {
-    position: relative;
-  }
-  .features-section img {
-    display: block;
-    position: absolute;
-    right: 0;
-    width: 350px;
-    bottom: -2em;
-  }
+
   .testimonials-section ul {
     display: -webkit-box;
     display: -ms-flexbox;
