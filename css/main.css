@@ -146,8 +146,11 @@ section.features-section {
 
 .info {
  
-    /*max-height: 1000px;*/
+    max-height: 0px;
     background-color: black;
+    overflow: hidden;
+
+    transition: max-height 0.5s;
 }
 
 #design {
@@ -159,7 +162,7 @@ section.features-section {
 }
 
 #designInfo {
-    display: none;
+   /* display: none;*/
 }
 
 #rozrywka {
@@ -171,7 +174,7 @@ section.features-section {
 }
 
 #rozrywkaInfo {
-    display: none;
+    /*display: none;*/
 }
 
 
@@ -184,7 +187,7 @@ section.features-section {
 }
 
 #technologiaInfo{
-    display: none;
+   /* display: none;*/
 }
 
 #relaks {
@@ -196,7 +199,7 @@ section.features-section {
 }
 
 #relaksInfo{
-    display:none;
+    /*display:none;*/
 }
 
 #prywatnosc {
@@ -209,12 +212,22 @@ section.features-section {
 
 
 #prywatnoscInfo {
-    display: none;
+    /*display: none;*/
+}
+
+
+.container > .textImg {
+    display: table-cell;
+    margin-top: auto;
+    margin-bottom: auto;
+    vertical-align: middle;
+    transition: background 0.3s;
 }
 
 .textImg:hover {
     filter: drop-shadow(3px 3px 8px rgb(255 213 0 / 1));
     background-color: red;
+
 }
 
 #design > .textImg {
@@ -272,25 +285,24 @@ section.features-section {
     background-size: contain;
     background-position: center;
     display: table;
+    opacity: 0.4;
+    filter: alpha(opacity=40); /* msie */
+    background-color: #000;
+    transition: 0.3s;
 }
 
-.container > .textImg {
-    display: table-cell;
-    margin-top: auto;
-    margin-bottom: auto;
+    .features-section .container:hover {
+        opacity: 1;
+        filter: alpha(opacity=40); /* msie */
+        background-color: #000;
 
-    vertical-align: middle;
-}
+    }
 
-.textImg:hover .hiddendiv {
-    display: block;
-}
-
-.hiddendiv {
-    display: none;
-    height: 200px;
-    background-color: green;
-}
+    .features-section .container--active {
+        opacity: 1;
+        filter: alpha(opacity=40); /* msie */
+        background-color: #000;
+    }
 
 /*
 ul.features-list {

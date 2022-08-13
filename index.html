@@ -10,57 +10,78 @@
 <body>
     <script type="text/javascript">
         window.onload = function () {
-            var design = document.getElementById('design');
 
-            design.style.cursor = 'pointer';
-            design.onclick = function () {
-                console.log("clicked! design");
-                toggle('designInfo');
-            };
+            document.querySelectorAll('.textImg').forEach(button => {
+                button.addEventListener('click', () => {
+                    console.log("clicked element");
+    
 
-            var rozrywka = document.getElementById('rozrywka');
+                    button.parentElement.classList.toggle('container--active');
 
-            rozrywka.style.cursor = 'pointer';
-            rozrywka.onclick = function () {
-                console.log("clicked! rozrywka");
-                toggle('rozrywkaInfo');
-            };
+                    const divContent = button.parentElement.nextElementSibling;
 
-            var technologia = document.getElementById('technologia');
+                    if (button.parentElement.classList.contains('container--active')) {
+                        divContent.style.maxHeight = divContent.scrollHeight + 'px';
+                    } else {
+                        divContent.style.maxHeight = 0;
+                    }
+                })
+            });
 
-            technologia.style.cursor = 'pointer';
-            technologia.onclick = function () {
-                console.log("clicked! technologia");
-                toggle('technologiaInfo');
-            };
+        //    var design = document.getElementById('design');
 
-            var relaks = document.getElementById('relaks');
+        //    design.style.cursor = 'pointer';
+        //    design.onclick = function () {
+        //        console.log("clicked! design");
+        //        toggle('designInfo');
+        //    };
 
-            relaks.style.cursor = 'pointer';
-            relaks.onclick = function () {
-                console.log("clicked! relaks");
-                toggle('relaksInfo');
-            };
+        //    var rozrywka = document.getElementById('rozrywka');
 
-            var prywatnosc = document.getElementById('prywatnosc');
+        //    rozrywka.style.cursor = 'pointer';
+        //    rozrywka.onclick = function () {
+        //        console.log("clicked! rozrywka");
+        //        toggle('rozrywkaInfo');
+        //    };
 
-            prywatnosc.style.cursor = 'pointer';
-            prywatnosc.onclick = function () {
-                console.log("clicked! prywatnosc");
-                toggle('prywatnoscInfo');
-            };
-        };
+        //    var technologia = document.getElementById('technologia');
 
-        function toggle(divName) {
-            var x = document.getElementById(divName);
-            console.log("toggling!");
-            console.log(x.style.display);
-            if (x.style.display === "" || x.style.display === "none") {
-                x.style.display = "block";
-            } else {
-                x.style.display = "none";
-            }
+        //    technologia.style.cursor = 'pointer';
+        //    technologia.onclick = function () {
+        //        console.log("clicked! technologia");
+        //        toggle('technologiaInfo');
+        //    };
+
+        //    var relaks = document.getElementById('relaks');
+
+        //    relaks.style.cursor = 'pointer';
+        //    relaks.onclick = function () {
+        //        console.log("clicked! relaks");
+        //        toggle('relaksInfo');
+        //    };
+
+        //    var prywatnosc = document.getElementById('prywatnosc');
+
+        //    prywatnosc.style.cursor = 'pointer';
+        //    prywatnosc.onclick = function () {
+        //        console.log("clicked! prywatnosc");
+        //        toggle('prywatnoscInfo');
+        //    };
+        //};
+
+        //function toggle(divName) {
+        //    var x = document.getElementById(divName);
+        //    console.log("toggling!");
+        //    console.log(x.style.display);
+        //    if (x.style.display === "" || x.style.display === "none") {
+        //        x.style.display = "block";
+        //    } else {
+        //        x.style.display = "none";
+        //    }
         }
+
+ 
+
     </script>
 
 
@@ -110,13 +131,14 @@
         <div class="container" id="design">
             <div class="textImg"> </div>
         </div>
-        <div class="info" id="designInfo"> 
+        <div class="info" id="designInfo">
             <div class="infoInside">
                 <h1> Wystrój - fundament VTS</h1>
                 <p> Pomysł Visual Trip Space zrodził się z niecodziennego designu pomieszczenia. Wnętrze pokoju otoczone jest niezwykle klimatycznymi muralami w klimacie Retro/Synthwave. Uroku całości nadają oryginalne obrazy lokalnych artystów - które możesz u nas zakupić. </p>
                 <p> Pokój oświeltlony jest ponad dziesięcioma metrami adresowalnych taśm LED, które potrafią nadać pomieszczeniu dowolny klimat - zależnie od tego jak się dzisiaj czujesz. </p>
             </div>
         </div>
+
 
         <div class="container" id="rozrywka">
             <div class="textImg"> </div>
@@ -271,7 +293,7 @@
                     </form>
                 </div>
                 <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
-                <script type='text/javascript'>(function ($) { window.fnames = new Array(); window.ftypes = new Array(); fnames[0] = 'EMAIL'; ftypes[0] = 'email'; fnames[1] = 'FNAME'; ftypes[1] = 'text'; fnames[2] = 'LNAME'; ftypes[2] = 'text'; fnames[3] = 'ADDRESS'; ftypes[3] = 'address'; fnames[4] = 'PHONE'; ftypes[4] = 'phone'; fnames[5] = 'BIRTHDAY'; ftypes[5] = 'birthday'; }(jQuery)); var $mcj = jQuery.noConflict(true);</script>
+                <!--<script type='text/javascript'>(function ($) { window.fnames = new Array(); window.ftypes = new Array(); fnames[0] = 'EMAIL'; ftypes[0] = 'email'; fnames[1] = 'FNAME'; ftypes[1] = 'text'; fnames[2] = 'LNAME'; ftypes[2] = 'text'; fnames[3] = 'ADDRESS'; ftypes[3] = 'address'; fnames[4] = 'PHONE'; ftypes[4] = 'phone'; fnames[5] = 'BIRTHDAY'; ftypes[5] = 'birthday'; }(jQuery)); var $mcj = jQuery.noConflict(true);</script>-->
                 <!--End mc_embed_signup-->
             </div>
 
