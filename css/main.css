@@ -45,7 +45,8 @@ body {
 .pswp-gallery {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
+    justify-content: space-between;
+
 }
 
     .pswp-gallery a img {
@@ -169,16 +170,32 @@ section.features-section {
 }
 
 .infoInside {
-    max-width: 800px;
+    width: 50%;
     background-color: black;
     margin-left: auto;
     margin-right: auto;
-    padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border: 2px solid var(--secondary-color);
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-top: 5vw;
+    padding-bottom: 5vw;
+    text-align:justify;
 }
+
+
+    .infoInside h1 {
+        color:black;
+        font-size: 3.5vw;
+        padding: 0;
+        margin: 0;
+        line-height: 4.2vw;
+        -webkit-text-stroke: 3px var(--teritary-color);
+    }
+
+    .infoInside + .infoInside {
+        background-color: #000000;
+        opacity: 1;
+        background: linear-gradient(135deg, #774B9955 25%, transparent 25%) -40px 0/ 80px 80px, linear-gradient(225deg, #774B99 25%, transparent 25%) -40px 0/ 80px 80px, linear-gradient(315deg, #774B9955 25%, transparent 25%) 0px 0/ 80px 80px, linear-gradient(45deg, #774B99 25%, #000000 25%) 0px 0/ 80px 80px;
+    }
 
 
 .info {
@@ -186,6 +203,8 @@ section.features-section {
     max-height: 0px;
     background-color: black;
     overflow: hidden;
+
+    display: flex;
 
     transition: max-height 0.5s;
 }

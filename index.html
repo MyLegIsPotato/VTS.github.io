@@ -31,15 +31,26 @@
                 button.addEventListener('click', () => {
                     console.log("clicked element");
 
-
-                    button.parentElement.classList.toggle('container--active');
+                    const div1 = button.parentElement.nextElementSibling;
+                    const div2 = button.parentElement.nextElementSibling.nextElementSibling;
 
                     const divContent = button.parentElement.nextElementSibling;
 
+                    if (div1.scrollHeight < div2.scrollHeight) {
+                        divContent = button.parentElement.nextElementSibling.nextElementSibling;
+                    }
+
+                    button.parentElement.classList.toggle('container--active');
+
                     if (button.parentElement.classList.contains('container--active')) {
                         divContent.style.maxHeight = divContent.scrollHeight + 'px';
+                        addEventListener('resize', () => {
+                            divContent.style.maxHeight = divContent.scrollHeight + 'px';
+                        });
+
                     } else {
                         divContent.style.maxHeight = 0;
+                        removeEventListener('resize');
                     }
                 })
             });
@@ -159,29 +170,29 @@
             <div class="infoInside">
                 <div class="gallery">
                     <div class="pswp-gallery" id="my-gallery">
-                        <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg"
+                        <a href="https://via.placeholder.com/468x60?text=Visual+Trip+Space"
                            data-pswp-width="1669"
                            data-pswp-height="2500"
                            target="_blank">
-                            <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-200.jpg" alt="" />
+                            <img src="https://via.placeholder.com/468x60?text=Visual+Trip+Space" alt="" />
                         </a>
-                        <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg"
+                        <a href="https://via.placeholder.com/90x120?text=Visual+Trip+Space"
                            data-pswp-width="1669"
                            data-pswp-height="2500"
                            target="_blank">
-                            <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-200.jpg" alt="" />
+                            <img src="https://via.placeholder.com/90x120?text=Visual+Trip+Space" alt="" />
                         </a>
-                        <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg"
+                        <a href="https://via.placeholder.com/300x200"
                            data-pswp-width="1669"
                            data-pswp-height="2500"
                            target="_blank">
-                            <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-200.jpg" alt="" />
+                            <img src="https://via.placeholder.com/300x200" alt="" />
                         </a>
-                        <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg"
+                        <a href="https://via.placeholder.com/500x320"
                            data-pswp-width="1669"
                            data-pswp-height="2500"
                            target="_blank">
-                            <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-200.jpg" alt="" />
+                            <img src="https://via.placeholder.com/500x320" alt="" />
                         </a>
 
 
