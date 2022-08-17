@@ -10,7 +10,7 @@
     margin-left: auto;
     margin-right: auto;
     align-self: center;
-    width: 600px;
+    width: auto;
     padding: 20px;
     border: 5px solid var(--teritary-color);
     border-radius: 20px;
@@ -23,6 +23,16 @@ body {
     font-family: 'Poppins';
 }
 
+#footer{
+    height: 80px;
+    background-color: var(--primary-color);
+    color: black;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
 
 .hero {
     text-align: center;
@@ -35,26 +45,6 @@ body {
     align-content: center;
 }
 
-.gallery{
-
-    width: 100%;
-    height: auto;
-
-}
-
-.pswp-gallery {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-
-}
-
-    .pswp-gallery a img {
-        display: block;
-        border: 2px solid var(--teritary-color);
-        padding: 2px;
-        margin: 10px;
-    }
 
 .logoImg {
     width: 80%;
@@ -104,18 +94,6 @@ a {
   color: #444444;
 }
 
-.infoInside > ul {
-  list-style-type: none;
-}
-
-.infoInside > ul li::before {
-    content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
-    color: var(--teritary-color); /* Change the color */
-    font-weight: bold; /* If you want it to be bold */
-    display: inline-block; /* Needed to add space between the bullet and the text */
-    width: 1em; /* Also needed for space (tweak if needed) */
-    margin-left: -1em; /* Also needed for space (tweak if needed) */
-}
 
 section {
   padding: 5em 2em;
@@ -169,8 +147,25 @@ section.features-section {
     background-position: center;*/
 }
 
+
+
+.info {
+    max-height: 0px;
+    background-color: black;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: max-height 0.5s;
+}
+
+.reverseFlow {
+    flex-flow: column;
+}
+
+
 .infoInside {
-    width: 50%;
+    margin-top: 4vw;
+    width: 90%;
     background-color: black;
     margin-left: auto;
     margin-right: auto;
@@ -183,31 +178,99 @@ section.features-section {
 
 
     .infoInside h1 {
-        color:black;
+        color: var(--teritary-color);
         font-size: 3.5vw;
         padding: 0;
         margin: 0;
         line-height: 4.2vw;
-        -webkit-text-stroke: 3px var(--teritary-color);
     }
 
-    .infoInside + .infoInside {
+    .infoInside + .infoInside{
         background-color: #000000;
         opacity: 1;
-        background: linear-gradient(135deg, #774B9955 25%, transparent 25%) -40px 0/ 80px 80px, linear-gradient(225deg, #774B99 25%, transparent 25%) -40px 0/ 80px 80px, linear-gradient(315deg, #774B9955 25%, transparent 25%) 0px 0/ 80px 80px, linear-gradient(45deg, #774B99 25%, #000000 25%) 0px 0/ 80px 80px;
+        /*background: linear-gradient(135deg, #774B9955 25%, transparent 25%) -40px 0/ 80px 80px, linear-gradient(225deg, #774B99 25%, transparent 25%) -40px 0/ 80px 80px, linear-gradient(315deg, #774B9955 25%, transparent 25%) 0px 0/ 80px 80px, linear-gradient(45deg, #774B99 25%, #000000 25%) 0px 0/ 80px 80px;*/
+    }
+
+    .infoInside > ul {
+        list-style-type: none;
+    }
+
+        .infoInside > ul li::before {
+            content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+            color: var(--teritary-color); /* Change the color */
+            font-weight: bold; /* If you want it to be bold */
+            display: inline-block; /* Needed to add space between the bullet and the text */
+            width: 1em; /* Also needed for space (tweak if needed) */
+            margin-left: -1em; /* Also needed for space (tweak if needed) */
+        }
+
+
+/* GALLERY: */
+
+.gallery {
+    width: 100%;
+    height: auto;
+}
+
+.pswp-gallery {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+}
+
+    .pswp-gallery a {
+        width: 100%;
+        height: auto;
+        padding: 0;
+        margin: 10px 0px 10px 0px;
+    }
+
+        .pswp-gallery a img {
+            display: block;
+            border: 2px solid var(--teritary-color);
+            width:100%;
+
+        }
+
+/* FEATURES SECTION */
+
+
+.features-section .container {
+    height: 300px;
+    width: 100%;
+    border-top: 5px solid var(--teritary-color);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    display: table;
+    opacity: 0.4;
+    filter: alpha(opacity=40); /* msie */
+    background-color: #000;
+    transition: 0.3s;
+    z-index: 3;
+    position: relative;
+    margin-bottom: -30px;
+    margin-top: 30px;
+}
+
+    .features-section .container:hover {
+        opacity: 1;
+        filter: alpha(opacity=40); /* msie */
+        background-color: #000;
     }
 
 
-.info {
- 
-    max-height: 0px;
-    background-color: black;
-    overflow: hidden;
-
-    display: flex;
-
-    transition: max-height 0.5s;
+.features-section .container--active {
+    opacity: 1;
+    filter: alpha(opacity=40); /* msie */
+    background-color: #000;
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1),rgba(0,0,0,1),rgba(0,0,0,1),rgba(0,0,0,1), rgba(0,0,0,0));
 }
+
+
+/* IDs in features-section: */
 
 #design {
     background: url("cut/cut_1.png");
@@ -232,7 +295,6 @@ section.features-section {
 #rozrywkaInfo {
     /*display: none;*/
 }
-
 
 #technologia {
     background: url("cut/cut_3.png");
@@ -266,11 +328,9 @@ section.features-section {
     background-position: center;
 }
 
-
 #prywatnoscInfo {
     /*display: none;*/
 }
-
 
 .container > .textImg {
     display: table-cell;
@@ -278,6 +338,7 @@ section.features-section {
     margin-bottom: auto;
     vertical-align: middle;
     transition: background 0.3s;
+
 }
 
 .textImg:hover {
@@ -301,8 +362,6 @@ section.features-section {
     background-position: center;
 }
 
-
-
 #technologia > .textImg {
     width: auto;
     background: url("cut/technologia.svg");
@@ -310,8 +369,6 @@ section.features-section {
     background-size: 60% auto;
     background-position: center;
 }
-
-
 
 #relaks > .textImg {
     width: auto;
@@ -321,8 +378,6 @@ section.features-section {
     background-position: center;
 }
 
-
-
 #prywatnosc > .textImg {
     width: auto;
     background: url("cut/prywatnosc.svg");
@@ -331,56 +386,12 @@ section.features-section {
     background-position: center;
 }
 
-.features-section .container {
-    height: 300px;
-    width: 100%;
-    border-top: 5px solid var(--teritary-color);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    display: table;
-    opacity: 0.4;
-    filter: alpha(opacity=40); /* msie */
-    background-color: #000;
-    transition: 0.3s;
-}
-
-    .features-section .container:hover {
-        opacity: 1;
-        filter: alpha(opacity=40); /* msie */
-        background-color: #000;
-
-    }
-
-    .features-section .container--active {
-        opacity: 1;
-        filter: alpha(opacity=40); /* msie */
-        background-color: #000;
-    }
-
-/*
-ul.features-list {
-  margin: 0;
-  padding-left: .1em;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (minmax(19rem, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
-}
-
-
-ul.features-list li {
-  font-size: 1.1em;
-  margin-bottom: 1em;
-  margin-left: 2em;
-  position: relative;
-}
-*/
+/* TESTIMONIALS */
 
 .testimonials-section {
-  background: var(--teritary-color);
-  color: white;
+    background: var(--teritary-color);
+    color: white;
+    margin-top: 30px;
 }
 
 .testimonials-section li {
@@ -541,62 +552,107 @@ nav li a:hover {
 }
 
 @media only screen and (min-width: 1080px) {
-  .container {
-    width: 1080px;
-    margin: 0 auto;
-  }
-  section {
-    padding: 10em 4em;
-  }
-  .hero .container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    text-align: left;
-  }
-  .hero .container .left-col {
-    margin: 3em 3em 0 5em;
-  }
-  .hero .container .left-col h1 {
-    font-size: 3em;
-    width: 90%;
-  }
-  .hero-img {
-    width: 30%;
-    margin-right: 8em;
-  }
-  .hero-cta {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .primary-cta {
-    margin-right: 1em;
-  }
-  ul.features-list {
-    display: block;
-    margin-left: 5em;
-  }
-  ul.features-list li {
-    font-size: 1.4em;
-  }
-  ul.features-list li:before {
-    width: 30px;
-    height: 30px;
-  }
+    .container {
+        width: 1080px;
+        margin: 0 auto;
+    }
 
-  .testimonials-section ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .testimonials-section ul li {
-    margin: 0 1em;
-    list-style-type: none;
-  }
+    .info {
+        max-height: 0px;
+        background-color: black;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        transition: max-height 0.5s;
+    }
+
+    .reverseFlow {
+        flex-flow: row-reverse;
+    }
+
+    .pswp-gallery {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+        .pswp-gallery a {
+            padding: 2px;
+            margin: 10px;
+            max-width: 43%;
+            max-height: 70%;
+        }
+
+            .pswp-gallery a img {
+                border: 2px solid var(--teritary-color);
+                object-fit: cover;
+                width: 100%;
+            }
+
+    section {
+        padding: 10em 4em;
+    }
+
+    .hero .container {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+        .hero .container .left-col {
+            margin: 3em 3em 0 5em;
+        }
+
+            .hero .container .left-col h1 {
+                font-size: 3em;
+                width: 90%;
+            }
+
+    .hero-img {
+        width: 30%;
+        margin-right: 8em;
+    }
+
+    .hero-cta {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+
+    .primary-cta {
+        margin-right: 1em;
+    }
+
+    ul.features-list {
+        display: block;
+        margin-left: 5em;
+    }
+
+        ul.features-list li {
+            font-size: 1.4em;
+        }
+
+            ul.features-list li:before {
+                width: 30px;
+                height: 30px;
+            }
+
+
+    .testimonials-section ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+          .testimonials-section ul li {
+            margin: 0 1em;
+            list-style-type: none;
+          }
+
   .contact-section {
     position: relative;
   }
@@ -665,7 +721,16 @@ nav li a:hover {
 
 }
 
-@media only screen and (min-width: 1450px) {
+@media only screen and (max-width: 1080px) {
+
+    .infoInside + .infoInside {
+        background-color: #000000;
+        opacity: 1;
+        margin-top: 0;
+        padding-top: 0;
+        /*background: linear-gradient(135deg, #774B9955 25%, transparent 25%) -40px 0/ 80px 80px, linear-gradient(225deg, #774B99 25%, transparent 25%) -40px 0/ 80px 80px, linear-gradient(315deg, #774B9955 25%, transparent 25%) 0px 0/ 80px 80px, linear-gradient(45deg, #774B99 25%, #000000 25%) 0px 0/ 80px 80px;*/
+    }
+
 
 }
 /*# sourceMappingURL=main.css.map */

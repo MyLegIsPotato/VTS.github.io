@@ -22,9 +22,6 @@
 
     <script type="text/javascript">
 
-
-
-
         window.onload = function () {
 
             document.querySelectorAll('.textImg').forEach(button => {
@@ -32,12 +29,18 @@
                     console.log("clicked element");
 
                     const div1 = button.parentElement.nextElementSibling;
+                    console.log("d1 check");
+
                     const div2 = button.parentElement.nextElementSibling.nextElementSibling;
+                    console.log("d2 check");
 
                     const divContent = button.parentElement.nextElementSibling;
 
-                    if (div1.scrollHeight < div2.scrollHeight) {
-                        divContent = button.parentElement.nextElementSibling.nextElementSibling;
+                    if (div2) {
+                        if (div1.scrollHeight < div2.scrollHeight) {
+                            divContent = button.parentElement.nextElementSibling.nextElementSibling;
+                        }
+
                     }
 
                     button.parentElement.classList.toggle('container--active');
@@ -50,64 +53,11 @@
 
                     } else {
                         divContent.style.maxHeight = 0;
-                        removeEventListener('resize');
+                        //removeEventListener('resize');
                     }
                 })
             });
-
-            //    var design = document.getElementById('design');
-
-            //    design.style.cursor = 'pointer';
-            //    design.onclick = function () {
-            //        console.log("clicked! design");
-            //        toggle('designInfo');
-            //    };
-
-            //    var rozrywka = document.getElementById('rozrywka');
-
-            //    rozrywka.style.cursor = 'pointer';
-            //    rozrywka.onclick = function () {
-            //        console.log("clicked! rozrywka");
-            //        toggle('rozrywkaInfo');
-            //    };
-
-            //    var technologia = document.getElementById('technologia');
-
-            //    technologia.style.cursor = 'pointer';
-            //    technologia.onclick = function () {
-            //        console.log("clicked! technologia");
-            //        toggle('technologiaInfo');
-            //    };
-
-            //    var relaks = document.getElementById('relaks');
-
-            //    relaks.style.cursor = 'pointer';
-            //    relaks.onclick = function () {
-            //        console.log("clicked! relaks");
-            //        toggle('relaksInfo');
-            //    };
-
-            //    var prywatnosc = document.getElementById('prywatnosc');
-
-            //    prywatnosc.style.cursor = 'pointer';
-            //    prywatnosc.onclick = function () {
-            //        console.log("clicked! prywatnosc");
-            //        toggle('prywatnoscInfo');
-            //    };
-            //};
-
-            //function toggle(divName) {
-            //    var x = document.getElementById(divName);
-            //    console.log("toggling!");
-            //    console.log(x.style.display);
-            //    if (x.style.display === "" || x.style.display === "none") {
-            //        x.style.display = "block";
-            //    } else {
-            //        x.style.display = "none";
-            //    }
         }
-
-
 
     </script>
 
@@ -155,11 +105,12 @@
         </div>
     </section>
 
+
     <section class="features-section">
+
         <div class="container" id="design">
             <div class="textImg"> </div>
         </div>
-
         <div class="info" id="designInfo">
             <div class="infoInside">
                 <h1> Wystrój - fundament VTS</h1>
@@ -170,7 +121,7 @@
             <div class="infoInside">
                 <div class="gallery">
                     <div class="pswp-gallery" id="my-gallery">
-                        <a href="https://via.placeholder.com/468x60?text=Visual+Trip+Space"
+                        <!--<a href="https://via.placeholder.com/468x60?text=Visual+Trip+Space"
                            data-pswp-width="1669"
                            data-pswp-height="2500"
                            target="_blank">
@@ -193,8 +144,32 @@
                            data-pswp-height="2500"
                            target="_blank">
                             <img src="https://via.placeholder.com/500x320" alt="" />
-                        </a>
+                        </a>-->
 
+                        <a href="https://via.placeholder.com/500x320"
+                           data-pswp-width="1669"
+                           data-pswp-height="2500"
+                           target="_blank">
+                            <img src="https://via.placeholder.com/500x320" alt="" />
+                        </a>
+                        <a href="https://via.placeholder.com/500x320"
+                           data-pswp-width="1669"
+                           data-pswp-height="2500"
+                           target="_blank">
+                            <img src="https://via.placeholder.com/500x320" alt="" />
+                        </a>
+                        <a href="https://via.placeholder.com/500x320"
+                           data-pswp-width="1669"
+                           data-pswp-height="2500"
+                           target="_blank">
+                            <img src="https://via.placeholder.com/500x320" alt="" />
+                        </a>
+                        <a href="https://via.placeholder.com/500x320"
+                           data-pswp-width="1669"
+                           data-pswp-height="2500"
+                           target="_blank">
+                            <img src="https://via.placeholder.com/500x320" alt="" />
+                        </a>
 
                     </div>
                 </div>
@@ -204,7 +179,7 @@
         <div class="container" id="rozrywka">
             <div class="textImg"> </div>
         </div>
-        <div class="info" id="rozrywkaInfo">
+        <div class="reverseFlow info" id="rozrywkaInfo">
             <div class="infoInside">
                 <h1> Zabawa - to czego potrzebuje każdy człowiek </h1>
                 <p> VTS jest domowym centrum rozrywki - możesz u nas obejrzeć film, zagrać w gry komputerowe, potańczyć lub po prostu posłuchać muzyki.</p>
@@ -222,12 +197,68 @@
                     <li>Glowsticki</li>
                 </ul>
             </div>
+            <div class="infoInside">
+                <div class="gallery">
+                    <div class="pswp-gallery" id="my-gallery">
+                        <!--<a href="https://via.placeholder.com/468x60?text=Visual+Trip+Space"
+                           data-pswp-width="1669"
+                           data-pswp-height="2500"
+                           target="_blank">
+                            <img src="https://via.placeholder.com/468x60?text=Visual+Trip+Space" alt="" />
+                        </a>
+                        <a href="https://via.placeholder.com/90x120?text=Visual+Trip+Space"
+                           data-pswp-width="1669"
+                           data-pswp-height="2500"
+                           target="_blank">
+                            <img src="https://via.placeholder.com/90x120?text=Visual+Trip+Space" alt="" />
+                        </a>
+                        <a href="https://via.placeholder.com/300x200"
+                           data-pswp-width="1669"
+                           data-pswp-height="2500"
+                           target="_blank">
+                            <img src="https://via.placeholder.com/300x200" alt="" />
+                        </a>
+                        <a href="https://via.placeholder.com/500x320"
+                           data-pswp-width="1669"
+                           data-pswp-height="2500"
+                           target="_blank">
+                            <img src="https://via.placeholder.com/500x320" alt="" />
+                        </a>-->
+
+                        <a href="https://via.placeholder.com/500x320"
+                           data-pswp-width="1669"
+                           data-pswp-height="2500"
+                           target="_blank">
+                            <img src="https://via.placeholder.com/500x320" alt="" />
+                        </a>
+                        <a href="https://via.placeholder.com/500x320"
+                           data-pswp-width="1669"
+                           data-pswp-height="2500"
+                           target="_blank">
+                            <img src="https://via.placeholder.com/500x320" alt="" />
+                        </a>
+                        <a href="https://via.placeholder.com/500x320"
+                           data-pswp-width="1669"
+                           data-pswp-height="2500"
+                           target="_blank">
+                            <img src="https://via.placeholder.com/500x320" alt="" />
+                        </a>
+                        <a href="https://via.placeholder.com/500x320"
+                           data-pswp-width="1669"
+                           data-pswp-height="2500"
+                           target="_blank">
+                            <img src="https://via.placeholder.com/500x320" alt="" />
+                        </a>
+
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="container" id="technologia">
             <div class="textImg"> </div>
         </div>
-        <div class="info" id="technologiaInfo">
+        <div class="info" id="reverseFlow technologiaInfo">
             <div class="infoInside">
                 <h1> Sprzęt elektroniczny </h1>
                 <p> Najnowsze technologie to to co nadaje VTS jeszcze więcej uroku. </p>
@@ -237,12 +268,68 @@
                 <p> Dla graczy: Świecący gamingowy PC, posiadający zakrzywiony, 34-calowy ekran z odświeżaniem matrycy 144hz, napędzany RTX-em 3080. Całość jest wspierana przez 16-wątkowego Ryzena 3700X. Nie oferujemy wypieku bułek mimo posiadania takiego pierkarnika.</p>
                 <p> Dla chętnych doznań: Jedyny prawilny zestaw do VR czyli nieśmiertelny Oculus Rift.</p>
             </div>
+            <div class="infoInside">
+                <div class="gallery">
+                    <div class="pswp-gallery" id="my-gallery">
+                        <!--<a href="https://via.placeholder.com/468x60?text=Visual+Trip+Space"
+                           data-pswp-width="1669"
+                           data-pswp-height="2500"
+                           target="_blank">
+                            <img src="https://via.placeholder.com/468x60?text=Visual+Trip+Space" alt="" />
+                        </a>
+                        <a href="https://via.placeholder.com/90x120?text=Visual+Trip+Space"
+                           data-pswp-width="1669"
+                           data-pswp-height="2500"
+                           target="_blank">
+                            <img src="https://via.placeholder.com/90x120?text=Visual+Trip+Space" alt="" />
+                        </a>
+                        <a href="https://via.placeholder.com/300x200"
+                           data-pswp-width="1669"
+                           data-pswp-height="2500"
+                           target="_blank">
+                            <img src="https://via.placeholder.com/300x200" alt="" />
+                        </a>
+                        <a href="https://via.placeholder.com/500x320"
+                           data-pswp-width="1669"
+                           data-pswp-height="2500"
+                           target="_blank">
+                            <img src="https://via.placeholder.com/500x320" alt="" />
+                        </a>-->
+
+                        <a href="https://via.placeholder.com/500x320"
+                           data-pswp-width="1669"
+                           data-pswp-height="2500"
+                           target="_blank">
+                            <img src="https://via.placeholder.com/500x320" alt="" />
+                        </a>
+                        <a href="https://via.placeholder.com/500x320"
+                           data-pswp-width="1669"
+                           data-pswp-height="2500"
+                           target="_blank">
+                            <img src="https://via.placeholder.com/500x320" alt="" />
+                        </a>
+                        <a href="https://via.placeholder.com/500x320"
+                           data-pswp-width="1669"
+                           data-pswp-height="2500"
+                           target="_blank">
+                            <img src="https://via.placeholder.com/500x320" alt="" />
+                        </a>
+                        <a href="https://via.placeholder.com/500x320"
+                           data-pswp-width="1669"
+                           data-pswp-height="2500"
+                           target="_blank">
+                            <img src="https://via.placeholder.com/500x320" alt="" />
+                        </a>
+
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="container" id="relaks">
             <div class="textImg"> </div>
         </div>
-        <div class="info" id="relaksInfo">
+        <div class="reverseFlow  info" id="relaksInfo">
             <div class="infoInside">
                 <h1> Odpoczynek </h1>
                 <p> Jeśli nie w głowie ci młodzieńcze zabawy i korzystanie z ciekawostek technologicznych - możesz u nas po prostu odpocząć - nawet z noclegiem. </p>
@@ -250,6 +337,62 @@
                 <p> Pozwól sobie wypocząć. Najlepiej u nas. Warto. Plecy podziękują. </p>
                 <p> Prowadzimy również sprzedaż olejków eterycznych o różnych zapachach -  dla chętnych aromaterapii.</p>
                 <p> Lubisz relaksować się przy muzyce? Nie ma sprawy!</p>
+            </div>
+            <div class="infoInside">
+                <div class="gallery">
+                    <div class="pswp-gallery" id="my-gallery">
+                        <!--<a href="https://via.placeholder.com/468x60?text=Visual+Trip+Space"
+                           data-pswp-width="1669"
+                           data-pswp-height="2500"
+                           target="_blank">
+                            <img src="https://via.placeholder.com/468x60?text=Visual+Trip+Space" alt="" />
+                        </a>
+                        <a href="https://via.placeholder.com/90x120?text=Visual+Trip+Space"
+                           data-pswp-width="1669"
+                           data-pswp-height="2500"
+                           target="_blank">
+                            <img src="https://via.placeholder.com/90x120?text=Visual+Trip+Space" alt="" />
+                        </a>
+                        <a href="https://via.placeholder.com/300x200"
+                           data-pswp-width="1669"
+                           data-pswp-height="2500"
+                           target="_blank">
+                            <img src="https://via.placeholder.com/300x200" alt="" />
+                        </a>
+                        <a href="https://via.placeholder.com/500x320"
+                           data-pswp-width="1669"
+                           data-pswp-height="2500"
+                           target="_blank">
+                            <img src="https://via.placeholder.com/500x320" alt="" />
+                        </a>-->
+
+                        <a href="https://via.placeholder.com/500x320"
+                           data-pswp-width="1669"
+                           data-pswp-height="2500"
+                           target="_blank">
+                            <img src="https://via.placeholder.com/500x320" alt="" />
+                        </a>
+                        <a href="https://via.placeholder.com/500x320"
+                           data-pswp-width="1669"
+                           data-pswp-height="2500"
+                           target="_blank">
+                            <img src="https://via.placeholder.com/500x320" alt="" />
+                        </a>
+                        <a href="https://via.placeholder.com/500x320"
+                           data-pswp-width="1669"
+                           data-pswp-height="2500"
+                           target="_blank">
+                            <img src="https://via.placeholder.com/500x320" alt="" />
+                        </a>
+                        <a href="https://via.placeholder.com/500x320"
+                           data-pswp-width="1669"
+                           data-pswp-height="2500"
+                           target="_blank">
+                            <img src="https://via.placeholder.com/500x320" alt="" />
+                        </a>
+
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -263,6 +406,37 @@
                 <p> Visual Trip Space to okazja doskonała dla osób niechętnych do imprezowania w klubie. U nas wszystko pozostaje pomiędzy klientem, a obsługą.</p>
                 <p> Nie zbieramy danych osobowych, ponieważ wierzymy, że zadowolony klient i tak kiedyś wróci. </p>
                 <p> Pokój nie jest zamykany na klucz ze względów bezpieczeństwa - klientów jak i wyposażenia. W przypadku dłuższego pobytu, możecie być jednak pewni, że zarówno Wy, jak i wasze rzeczy pozostaną bezpieczne. </p>
+            </div>
+            <div class="infoInside">
+                <div class="gallery">
+                    <div class="pswp-gallery" id="my-gallery">
+                        <a href="https://via.placeholder.com/500x320"
+                           data-pswp-width="1669"
+                           data-pswp-height="2500"
+                           target="_blank">
+                            <img src="https://via.placeholder.com/500x320" alt="" />
+                        </a>
+                        <a href="https://via.placeholder.com/500x320"
+                           data-pswp-width="1669"
+                           data-pswp-height="2500"
+                           target="_blank">
+                            <img src="https://via.placeholder.com/500x320" alt="" />
+                        </a>
+                        <a href="https://via.placeholder.com/500x320"
+                           data-pswp-width="1669"
+                           data-pswp-height="2500"
+                           target="_blank">
+                            <img src="https://via.placeholder.com/500x320" alt="" />
+                        </a>
+                        <a href="https://via.placeholder.com/500x320"
+                           data-pswp-width="1669"
+                           data-pswp-height="2500"
+                           target="_blank">
+                            <img src="https://via.placeholder.com/500x320" alt="" />
+                        </a>
+
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -349,8 +523,9 @@
             <!--End mc_embed_signup-->
 
         </div>
-    </section>
 
+    </section>
+    <div id="footer"><h3>Visual Trip Space 	&copy; 2022 Wszelkie prawa zastrzeżone.</h3> </div>
     <script>
 
         const mobileBtn = document.getElementById('mobile-cta')
