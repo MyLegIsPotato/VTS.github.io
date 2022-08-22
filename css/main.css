@@ -1,8 +1,50 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap");
+html{
+    scroll-behavior: smooth;
+}
+
 :root {
     --primary-color: #FFD500;
     --secondary-color: #774B99;
     --teritary-color: #E7246D;
+}
+
+fieldset{
+    border: none;
+}
+
+.rezerwacjaButton{
+    background-color: black;
+    border: 2px solid var(--primary-color);
+    color: white;
+    transition: 0.3s;
+}
+
+.rezerwacjaButton:hover{
+    background-color: var(--primary-color);
+    color: black;
+}
+
+.rezerwacjaForm{
+    max-width: 500px;
+}
+
+.zgody {
+    font-size: 10px;
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 16px;
+    grid-row-gap: 0px;
+}
+
+.centerContent{
+    display:flex;
+    justify-content: center;
+}
+
+.form-check-labels{
+
 }
 
 #mc_embed_signup {
@@ -16,12 +58,57 @@
     border-radius: 20px;
 }
 
+.unselectable > *{
+    user-select: none;
+}
+
 body {
     background: #000000;
     color: #FFD500;
     margin: 0;
     font-family: 'Poppins';
 }
+
+.readMore{
+    display:block;
+    position:relative;
+    bottom: 0;
+    left: 0;
+}
+
+.textImg a {
+    background-color: transparent;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.heroInfo {
+    background: var(--primary-color);
+    background: linear-gradient(to right, var(--teritary-color),var(--primary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 5vw;
+}
+
+    .heroInfo h1 {
+        font-size: 8vw;
+        position: relative;
+        text-align: center;
+    }
+
+    .heroInfo h2 {
+        font-size: 5vw;
+    }
+
+    .heroInfo p{
+        font-weight: 100;
+        font-size: 3vw;
+        text-align: justify;
+    }
+
 
 #footer{
     height: 80px;
@@ -103,6 +190,16 @@ body {
         text-align: left;
     }
 
+.cennikCena {
+    flex-grow: 1;
+    font-size: 30px;
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: var(--teritary-color);
+}
+
 .cennikZamow {
     display: flex;
     width: 100%;
@@ -114,6 +211,20 @@ body {
     justify-content: center;
     font-size: 20px;
 }
+
+    .cennikZamow:hover {
+        background-color: var(--primary-color);
+        cursor: pointer;
+    }
+
+    .cennikZamow a {
+        color: var(--primary-color);
+    }
+
+    .cennikZamow:hover a {
+        color: var(--secondary-color);
+    }
+
 
 .hero {
     text-align: center;
@@ -130,6 +241,7 @@ body {
 .logoImg {
     width: 80%;
     margin: auto;
+    position:relative;
 }
 
 .logoImg img {
@@ -513,11 +625,11 @@ input, textarea {
 }
 
 input[type="submit"] {
-  background-color: var(--primary-color);
-  color: white;
+/*  background-color: var(--primary-color);
+  color: white;*/
   font-weight: bold;
   font-size: 1.3em;
-  border: none;
+/*  border: none;*/
   margin-bottom: 5em;
   border-radius: 5em;
   display: inline-block;
