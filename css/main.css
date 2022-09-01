@@ -101,18 +101,19 @@ body {
 
     .heroInfo h2 {
         font-size: 5vw;
+       
     }
 
     .heroInfo p{
         font-weight: 100;
-        font-size: 3vw;
+        font-size:3vw;
         text-align: justify;
     }
 
 
 #footer{
     height: 80px;
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     color: black;
     display: flex;
     align-content: center;
@@ -176,6 +177,7 @@ body {
     justify-content: center;
     align-items: center;
     display: flex;
+    color: var(--secondary-color);
 }
 
 .cennikWrapper {
@@ -253,7 +255,8 @@ body {
 .navbar {
     background: white;
     padding: 1em;
-    background-color: var(--teritary-color);
+    background-color: var(--secondary-color);
+
 }
 
 .navbar .logo {
@@ -582,7 +585,7 @@ section.features-section {
 /* TESTIMONIALS */
 
 .testimonials-section {
-    background: var(--teritary-color);
+    background: var(--secondary-color);
     color: white;
     margin-top: 30px;
 }
@@ -805,6 +808,39 @@ nav li a:hover {
                 font-size: 3em;
                 width: 90%;
             }
+
+    .heroInfo h2 {
+        font-size: 5vw;
+        background: linear-gradient(to right, var(--teritary-color),var(--primary-color),var(--teritary-color),var(--primary-color));
+        -webkit-background-clip: text;
+        -webkit-text-stroke: 4px transparent;
+        color: #232D2D;
+        -webkit-text-fill-color: black;
+        background-size: 300% 100%;
+        animation: animateBg 5s infinite linear;
+    }
+
+
+    .heroInfo p {
+        font-weight: 100;
+        font-size: 2vw;
+        text-align: justify;
+    }
+
+    .heroInfo .container{
+        width: 80%;
+    }
+
+    @keyframes animateBg {
+        0% {
+            background-position: 100% 0;
+        }
+
+        100% {
+            background-position: 0 0;
+        }
+    }
+
 
     .hero-img {
         width: 30%;
